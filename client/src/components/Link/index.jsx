@@ -1,14 +1,15 @@
 import { memo } from "react";
+import { Link as RouterLink } from 'react-router-dom'
 
 import styles from './Link.module.css';
 
 const Link = (props) => {
-    const { label } = props;
+    const { label, to } = props;
 
     return (
-        <div className={styles.label}>
+        <RouterLink className={styles.label} to={to}>
             {label}
-        </div>
+        </RouterLink>
     )
 }
 

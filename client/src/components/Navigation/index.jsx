@@ -6,8 +6,8 @@ import styles from './Navigation.module.css';
 const Navigation = () => {
     return (
         <div className={styles.container}>
-            <Link label="Link 1" />
-            <Link label="Link 2" />
+            <Link label="Home" to="/" />
+            <Link label="Create" to="/create" />
         </div>
     )
 }
