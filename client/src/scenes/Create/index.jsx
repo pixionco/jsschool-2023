@@ -1,17 +1,10 @@
 import { memo, useState } from "react";
 
 import Button from "../../components/Button";
-import Input from "../../components/Input";
 import styles from './Create.module.css';
 
-const Create = (props) => {
+const Create = () => {
     const [currentRobot, setCurrentRobot] = useState(0);
-    const [name, setName] = useState('');
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        console.log(currentRobot, name);
-    }
 
     const robots = [
         '/robot-1.svg',
@@ -27,7 +20,7 @@ const Create = (props) => {
     ];
 
     return (
-        <div className={styles.form}>
+        <form className={styles.form}>
             <div className={styles.robotContainer}>
                 <img className={styles.robot} src={robots[currentRobot]} alt="robot" />
             </div>
@@ -38,11 +31,9 @@ const Create = (props) => {
                     })
                 }
             </div>
-            {/* <input ref={nameRef} /> */}
-            <Input onChange={(value) => {setName(value)}} />
-            {/* <button type="submit" onClick={onSubmit}> submit</button> */}
-            <Button label="Submit" onClick={onSubmit} />
-        </div>
+            <input />
+            <button type="submit">Submit</button>
+        </form>
     );
 }
 
